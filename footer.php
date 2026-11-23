@@ -19,12 +19,16 @@
 <script>
 // Modal functionality
 function openModal(service) {
-    document.getElementById(service + 'Modal').style.display = 'block';
+    const modal = document.getElementById(service + 'Modal');
+    if (!modal) return;
+    modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
 
 function closeModal(service) {
-    document.getElementById(service + 'Modal').style.display = 'none';
+    const modal = document.getElementById(service + 'Modal');
+    if (!modal) return;
+    modal.style.display = 'none';
     document.body.style.overflow = 'auto';
 }
 
