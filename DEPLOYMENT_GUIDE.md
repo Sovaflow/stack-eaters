@@ -1,3 +1,5 @@
+> **Portfolio note (November 2026):** This is a historical student-project guide, not a verified production deployment manual. Claims about AI, GDPR compliance, analytics performance, working contact-form delivery or production readiness are illustrative/unverified. Consult [README.md](README.md) for the current project scope. Do not enable third-party tracking without appropriate consent handling and tests.
+
 # Stack Eaters - GitHub Deployment Guide
 
 ## 🚀 AI-Enhanced GTM Implementation - Ready for Production
