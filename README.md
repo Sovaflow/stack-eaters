@@ -1,4 +1,4 @@
-# Stack Eaters — Analytics & MarTech Website
+# Stack Eaters - Analytics & MarTech Website
 
 **Student group project · WordPress theme · PHP · CSS · JavaScript · Google Tag Manager / GA4 concepts**
 
