@@ -17,6 +17,17 @@
 </footer>
 
 <script>
+// Demo contact form: never send entered personal data through an unconfigured GET request.
+document.addEventListener('DOMContentLoaded', function() {
+    const demoForm = document.getElementById('contactForm');
+    if (demoForm) {
+        demoForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Detta är ett demonstrationsformulär. Inget meddelande har skickats.');
+        });
+    }
+});
+
 // Modal functionality
 function openModal(service) {
     const modal = document.getElementById(service + 'Modal');
