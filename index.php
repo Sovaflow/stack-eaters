@@ -403,7 +403,8 @@
 
             <div class="contact-form-section">
                 <h3>Skicka ett meddelande</h3>
-                <form class="contact-form" id="contactForm">
+                <p id="contact-demo-note">Demonstrationsformulär – meddelanden skickas inte.</p>
+                        <form class="contact-form" id="contactForm" aria-describedby="contact-demo-note">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="contact-name">Namn *</label>
@@ -692,7 +693,7 @@ document.addEventListener('click', function(event) {
     </div>
 
     <div class="cta">
-      <a href="#contact" class="cta-button">Boka AI-Annonsanalys</a>
+      <a href="#kontakt" class="cta-button">Boka AI-Annonsanalys</a>
     </div>
   </div>
 </section>

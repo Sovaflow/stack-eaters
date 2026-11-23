@@ -17,14 +17,29 @@
 </footer>
 
 <script>
+// Demo contact form: never send entered personal data through an unconfigured GET request.
+document.addEventListener('DOMContentLoaded', function() {
+    const demoForm = document.getElementById('contactForm');
+    if (demoForm) {
+        demoForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Detta är ett demonstrationsformulär. Inget meddelande har skickats.');
+        });
+    }
+});
+
 // Modal functionality
 function openModal(service) {
-    document.getElementById(service + 'Modal').style.display = 'block';
+    const modal = document.getElementById(service + 'Modal');
+    if (!modal) return;
+    modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
 
 function closeModal(service) {
-    document.getElementById(service + 'Modal').style.display = 'none';
+    const modal = document.getElementById(service + 'Modal');
+    if (!modal) return;
+    modal.style.display = 'none';
     document.body.style.overflow = 'auto';
 }
 

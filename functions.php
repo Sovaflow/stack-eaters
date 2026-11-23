@@ -36,9 +36,6 @@ function stack_eaters_enqueue_assets() {
     // Enqueue main stylesheet
     wp_enqueue_style('stack-eaters-style', get_stylesheet_uri(), array(), '1.0.0');
 
-    // Enqueue custom JavaScript if needed
-    wp_enqueue_script('stack-eaters-script', get_template_directory_uri() . '/assets/js/script.js', array(), '1.0.0', true);
-
     // Enqueue GTM configuration script
     wp_enqueue_script('stack-eaters-gtm-config', get_template_directory_uri() . '/assets/js/gtm-config.js', array(), '1.0.0', true);
 
@@ -344,6 +341,9 @@ add_action('admin_menu', 'stack_eaters_analytics_admin_menu');
 
 function stack_eaters_analytics_admin_page() {
     if (isset($_POST['save_analytics'])) {
+        if (!current_user_can('manage_options') || !isset($_POST['_wpnonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['_wpnonce'])), 'save_analytics_settings')) {
+            wp_die(esc_html__('Invalid request.', 'stack-eaters'));
+        }
         update_option('stack_eaters_gtm_id', sanitize_text_field($_POST['gtm_id']));
         update_option('stack_eaters_ga4_id', sanitize_text_field($_POST['ga4_id']));
         update_option('stack_eaters_enable_ai_tracking', isset($_POST['enable_ai_tracking']));
